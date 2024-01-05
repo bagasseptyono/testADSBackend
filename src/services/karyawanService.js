@@ -63,10 +63,7 @@ const deleteKaryawan = async (nomorInduk) => {
   if (!checkNomorInduk) {
     throw Error("Nomor Induk Not Found");
   }
-  const deletedCuti = await deleteCutiByNomorInduk(nomorInduk);
-  if (!deletedCuti) {
-    throw Error("Failed Delete");
-  }
+  await deleteCutiByNomorInduk(nomorInduk);
   const deletedKaryawan = await Karyawan.destroy({
     where: {
       nomorInduk: nomorInduk,

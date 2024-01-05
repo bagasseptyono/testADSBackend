@@ -74,9 +74,6 @@ const deleteCutiByNomorInduk = async (nomorInduk) => {
       nomorInduk: nomorInduk
     }
   });
-  if (!deletedCuti) {
-    throw Error('Failed Delete')
-  }
   return deletedCuti;
 }
 
